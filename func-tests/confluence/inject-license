@@ -1,0 +1,5 @@
+#!/bin/bash
+# NOTE: This expects the license to be available in $CONFLUENCE_TEST_LICENSE variable
+CONFLUENCE_TEST_LICENSE=`echo ${CONFLUENCE_TEST_LICENSE} | tr -d '\n \t'`
+
+sed "s~INJECT_LICENSE_HERE~${CONFLUENCE_TEST_LICENSE}~" confluence/confluence-home/confluence.cfg.xml.tmpl > confluence/confluence-home/confluence.cfg.xml
